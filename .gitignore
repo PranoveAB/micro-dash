@@ -102,3 +102,17 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Remove these once we have implmentations for these categrories
+src/array
+src/collection
+src/date
+src/function
+src/lang
+src/math
+src/methods
+src/number
+src/object
+src/properties
+src/seq
+src/util
