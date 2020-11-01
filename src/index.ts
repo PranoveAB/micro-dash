@@ -1,1 +1,2 @@
-export { default as lowerCase } from './lowerCase';
+export { default as toLowerCase } from './toLowerCase';
+export { default as toUpperCase } from './toUpperCase';

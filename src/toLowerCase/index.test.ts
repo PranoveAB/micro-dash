@@ -1,6 +1,6 @@
-import lowerCase from './lowerCase';
+import toLowerCase from './index';
 
-describe('lowerCase', () => {
+describe('toLowerCase', () => {
   [
     {
       inputString: null,
@@ -15,6 +15,14 @@ describe('lowerCase', () => {
       expectedResult: '',
     },
     {
+      inputString: 'Lorem',
+      expectedResult: 'lorem',
+    },
+    {
+      inputString: 'lorem',
+      expectedResult: 'lorem',
+    },
+    {
       inputString: 'Lorem Ipsum',
       expectedResult: 'lorem ipsum',
     },
@@ -23,32 +31,28 @@ describe('lowerCase', () => {
       expectedResult: 'lorem ipsum',
     },
     {
-      inputString: 'lorem',
-      expectedResult: 'lorem',
-    },
-    {
       inputString: 'loremIpsum',
-      expectedResult: 'lorem ipsum',
+      expectedResult: 'loremipsum',
     },
     {
       inputString: '---loremIpsum',
-      expectedResult: 'lorem ipsum',
+      expectedResult: '---loremipsum',
     },
     {
       inputString: '---lorem-Ipsum---',
-      expectedResult: 'lorem ipsum',
+      expectedResult: '---lorem-ipsum---',
     },
     {
       inputString: '___lorem__Ipsum___',
-      expectedResult: 'lorem ipsum',
+      expectedResult: '___lorem__ipsum___',
     },
     {
       inputString: '---lorem_Ipsum---',
-      expectedResult: 'lorem ipsum',
+      expectedResult: '---lorem_ipsum---',
     },
   ].forEach(({ inputString, expectedResult }) => {
-    test(`lowerCase(${inputString}) should be ${expectedResult}`, () => {
-      expect(lowerCase(inputString)).toBe(expectedResult);
+    test(`toLowerCase(${inputString}) should be ${expectedResult}`, () => {
+      expect(toLowerCase(inputString)).toBe(expectedResult);
     });
   });
 });

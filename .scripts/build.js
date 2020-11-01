@@ -1,5 +1,6 @@
 const shell = require('shelljs');
 const pakageVersionUtil = require('./pakageVersionUtil');
+const getModulesConfig = require('./getModulesConfig');
 
 const packageVersion = pakageVersionUtil.currentVersion;
 
@@ -53,37 +54,4 @@ const runBuild = (modulesForBuild) => {
   });
 };
 
-const getModules = () => {
-  return [
-    {
-      moduleName: 'micro-dash',
-      packageVersion,
-      outputPath: 'dist/micro-dash',
-      webpack: {
-        entryPath: './src',
-        target: {
-          primary: 'node',
-        },
-      },
-      typescript: {
-        outputDir: 'dist/micro-dash',
-      },
-    },
-    {
-      moduleName: 'micro-dash.lowercase',
-      packageVersion,
-      outputPath: 'dist/micro-dash.lowercase/lowerCase',
-      webpack: {
-        entryPath: './src/lowerCase',
-        target: {
-          primary: 'web',
-        },
-      },
-      typescript: {
-        outputDir: 'dist/micro-dash.lowercase',
-      },
-    },
-  ];
-};
-
-runBuild(getModules());
+runBuild(getModulesConfig());

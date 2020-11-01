@@ -1,6 +1,6 @@
 {
   "name": "@micro-ux/micro-dash-root",
-  "version": "0.0.9",
+  "version": "0.10.0",
   "private": true,
   "repository": "git@github.com:micro-ux/micro-dash.git",
   "author": "Nischith BM <nischithbm@gmail.com>",

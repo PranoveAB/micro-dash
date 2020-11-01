@@ -1,4 +1,5 @@
 const shell = require('shelljs');
+const getModulesConfig = require('./getModulesConfig');
 var argv = require('yargs/yargs')(process.argv.slice(2)).argv;
 
 const packageVersion = argv.packageVersion;
@@ -18,20 +19,4 @@ const runPublish = (modulesForBuild) => {
   });
 };
 
-const getModules = () => {
-  const packageVersion = argv.packageVersion;
-  return [
-    {
-      moduleName: 'micro-dash',
-      packageVersion,
-      outputPath: 'dist/micro-dash',
-    },
-    {
-      moduleName: 'micro-dash.lowercase',
-      packageVersion,
-      outputPath: 'dist/micro-dash.lowercase/lowerCase',
-    },
-  ];
-};
-
-runPublish(getModules());
+runPublish(getModulesConfig(packageVersion));
