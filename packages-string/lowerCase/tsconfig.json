@@ -1,0 +1,9 @@
+{
+  "extends": "@micro-ux/micro-dash-build-config/.typescript/tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/*.test.ts"]
+}

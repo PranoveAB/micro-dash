@@ -1,6 +1,6 @@
 {
   "name": "@micro-ux/micro-dash.lowercase",
-  "version": "0.0.6",
+  "version": "0.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:micro-ux/micro-dash.git",
@@ -8,8 +8,12 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build:prod",
-    "build:prod": "NODE_ENV=production webpack && yarn build:types && yarn bundlesize",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:prod": "yarn build:prod:web && yarn build:prod:node && yarn build:types && yarn bundlesize",
+    "build:prod:web": "WP_CLEAN=true WP_TARGET=web webpack",
+    "build:prod:node": "WP_TARGET=node WP_TARGET_FILENAME=node/[name].js webpack",
+    "build:types": "yarn build:types:web && yarn build:types:node",
+    "build:types:web": "tsc --emitDeclarationOnly",
+    "build:types:node": "tsc --emitDeclarationOnly --outDir dist/node",
     "test": "jest",
     "bundlesize": "bundlesize"
   },

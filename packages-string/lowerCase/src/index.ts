@@ -1,4 +1,7 @@
-import { isNullOrUndefined } from '../__internal/objectUtils';
+// import { isNullOrUndefined } from '@micro-ux/micro-dash-internal-shared';
+export const isNullOrUndefined = function (object: any) {
+  return object === undefined || object === null;
+};
 
 /**
  * Converts `string`, as space separated words, to lower case.

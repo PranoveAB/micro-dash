@@ -1,0 +1,22 @@
+{
+  "name": "@micro-ux/micro-dash-internal-shared",
+  "version": "0.0.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:micro-ux/micro-dash.git",
+  "author": "Nischith BM <nischithbm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:prod",
+    "build:prod": "NODE_ENV=production webpack && yarn build:types",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@micro-ux/micro-dash-build-config": "0.0.4"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}

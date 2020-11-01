@@ -1,4 +1,4 @@
-import lowerCase from './lowerCase';
+import lowerCase from './index';
 
 describe('lowerCase', () => {
   [

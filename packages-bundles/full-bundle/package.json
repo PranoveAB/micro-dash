@@ -1,0 +1,25 @@
+{
+  "name": "@micro-ux/micro-dash",
+  "version": "0.0.7",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:micro-ux/micro-dash.git",
+  "author": "Nischith BM <nischithbm@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:prod",
+    "build:prod": "yarn build:prod:node && yarn build:types && yarn bundlesize",
+    "build:prod:node": "WP_CLEAN=true WP_TARGET=node webpack",
+    "build:types": "yarn build:types:node",
+    "build:types:node": "tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@micro-ux/micro-dash.lowercase": "0.0.5"
+  },
+  "devDependencies": {
+    "@micro-ux/micro-dash-build-config": "0.0.4"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}
