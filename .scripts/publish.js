@@ -29,7 +29,7 @@ const getModules = () => {
     {
       moduleName: 'micro-dash.lowercase',
       packageVersion,
-      outputPath: 'dist/micro-dash/lowerCase',
+      outputPath: 'dist/micro-dash.lowercase/lowerCase',
     },
   ];
 };

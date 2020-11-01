@@ -1,6 +1,6 @@
 {
-  "name": "@micro-ux/micro-dash",
-  "version": "0.0.3",
+  "name": "@micro-ux/micro-dash-root",
+  "version": "0.0.9",
   "private": true,
   "repository": "git@github.com:micro-ux/micro-dash.git",
   "author": "Nischith BM <nischithbm@gmail.com>",
@@ -11,9 +11,9 @@
     "test": "jest",
     "clean:dist": "rm -r dist",
     "bundlesize": "bundlesize",
-    "build": "yarn clean:dist; yarn build:prod --packageVersion $PACKAGE_VERSION && yarn bundlesize",
+    "build": "yarn clean:dist; yarn build:prod && yarn bundlesize",
     "build:prod": "node .scripts/build.js",
-    "publish:modules": "node .scripts/publish.js"
+    "publish:modules": "node .scripts/publish.js --packageVersion ${PACKAGE_VERSION}"
   },
   "dependencies": {},
   "devDependencies": {

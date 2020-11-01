@@ -1,20 +1,15 @@
 const shell = require('shelljs');
-var argv = require('yargs/yargs')(process.argv.slice(2)).argv;
+const pakageVersionUtil = require('./pakageVersionUtil');
 
-const packageVersion = argv.packageVersion;
-if (!packageVersion) {
-  throw new Error('define --packageVersion');
-}
+const packageVersion = pakageVersionUtil.currentVersion;
 
 const NODE_ENV = 'NODE_ENV=production';
-const generateTypescriptDeclarations = () => {
-  return shell.exec('tsc --declaration --emitDeclarationOnly --project tsconfig.build.json');
-};
 
 // TODO: handle errors
 const runWebpackForModule = (moduleConfig) => {
   const {
-    webpack: { entryPath, outputPath, target },
+    webpack: { entryPath, target },
+    outputPath,
   } = moduleConfig;
 
   shell.exec(`${NODE_ENV} webpack --target ${target.primary || 'web'} --entry ${entryPath} --output-path ${outputPath} --config .webpack/webpack.config.js`);
@@ -26,15 +21,17 @@ const runWebpackForModule = (moduleConfig) => {
 };
 
 // TODO: handle errors
-const copyReadMeForModule = (moduleConfig) => {
-  const { outputPath } = moduleConfig;
-  shell.exec(`cp README.md ${outputPath}`);
+const generateTypescriptDeclarationsForModule = (moduleConfig) => {
+  const {
+    typescript: { outputDir },
+  } = moduleConfig;
+  return shell.exec(`tsc --outDir ${outputDir} --declaration --emitDeclarationOnly --project tsconfig.build.json`);
 };
 
 // TODO: handle errors
-const copyNpmIgnoreForModule = (moduleConfig) => {
+const copyReadMeForModule = (moduleConfig) => {
   const { outputPath } = moduleConfig;
-  shell.exec(`cp ./.scripts/templates/.npmignore.template ${outputPath}/.npmignore`);
+  shell.exec(`cp README.md ${outputPath}`);
 };
 
 // TODO: handle errors
@@ -45,8 +42,8 @@ const copyPackageJsonForModule = (moduleConfig) => {
 
 const runBuildForModule = (moduleConfig) => {
   runWebpackForModule(moduleConfig);
+  generateTypescriptDeclarationsForModule(moduleConfig);
   copyPackageJsonForModule(moduleConfig);
-  copyNpmIgnoreForModule(moduleConfig);
   copyReadMeForModule(moduleConfig);
 };
 
@@ -57,7 +54,6 @@ const runBuild = (modulesForBuild) => {
 };
 
 const getModules = () => {
-  const packageVersion = argv.packageVersion;
   return [
     {
       moduleName: 'micro-dash',
@@ -65,26 +61,29 @@ const getModules = () => {
       outputPath: 'dist/micro-dash',
       webpack: {
         entryPath: './src',
-        outputPath: 'dist/micro-dash',
         target: {
           primary: 'node',
         },
+      },
+      typescript: {
+        outputDir: 'dist/micro-dash',
       },
     },
     {
       moduleName: 'micro-dash.lowercase',
       packageVersion,
-      outputPath: 'dist/micro-dash/lowerCase',
+      outputPath: 'dist/micro-dash.lowercase/lowerCase',
       webpack: {
         entryPath: './src/lowerCase',
-        outputPath: 'dist/micro-dash/lowerCase',
         target: {
           primary: 'web',
         },
+      },
+      typescript: {
+        outputDir: 'dist/micro-dash.lowercase',
       },
     },
   ];
 };
 
 runBuild(getModules());
-generateTypescriptDeclarations();
