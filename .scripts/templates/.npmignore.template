@@ -1,0 +1,8 @@
+./**/package.json
+./**/.npmignore
+./**/README.md
+./**/*/*.js
+
+**/*/*.d.ts
+!package.json
+.npmignore

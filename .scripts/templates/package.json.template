@@ -1,0 +1,17 @@
+{
+  "name": "@micro-ux/__PACKAGE_NAME__",
+  "version": "__PACKAGE_VERSION__",
+  "repository": "git@github.com:micro-ux/micro-dash.git",
+  "author": "Nischith BM <nischithbm@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,21 +1,23 @@
 const path = require('path');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isEnvProduction = process.env.NODE_ENV === 'production';
 
-const webPackConfig = {
+const webPackBaseConfig = {
+  target: 'web', // overriden by .scripts/build.js
   mode: isEnvProduction ? 'production' : 'development',
   devtool: isEnvProduction ? undefined : 'source-map',
-  // entry is passed dynamically using .build-scripts/build.sh
+  // entry is passed dynamically using .scripts/build.js
   output: {
-    path: path.resolve(process.cwd(), 'dist'),
+    path: path.resolve(process.cwd(), 'dist'), // --output-path overriden by .scripts/build.js
     filename: 'index.js',
     libraryTarget: 'umd', // AMD + CommonJS
   },
   // No externals as of now - would be ideal if this library is free from any dependencies
   externals: [],
-  plugins: [new webpack.ProgressPlugin()],
+  plugins: [],
   module: {
     rules: [
       {
@@ -39,4 +41,4 @@ const webPackConfig = {
   },
 };
 
-module.exports = webPackConfig;
+module.exports = webPackBaseConfig;
