@@ -1,6 +1,6 @@
 {
   "name": "@micro-ux/micro-dash.lowercase",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:micro-ux/micro-dash.git",
