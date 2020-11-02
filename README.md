@@ -1,4 +1,4 @@
-# micro-dash
+# micro-dash &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/micro-ux/micro-dash/blob/main/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/micro-ux/micro-dash) [![npm version](https://img.shields.io/npm/v/@micro-ux/micro-dash.svg?style=flat)](https://www.npmjs.com/package/@micro-ux/micro-dash)
 
 micro-dash offers a subset of lodash of the functionality found in [lodash](https://github.com/lodash/lodash) 
 
@@ -7,28 +7,33 @@ micro-dash offers a subset of lodash of the functionality found in [lodash](http
 It is essentially a re-write of [lodash](https://github.com/lodash/lodash) (many things copied as is to keep the functionality intact) in an attempt to create a micro version of lodash that leverage on modern browser capabilities to make it more lightweight. This would also mean lesser/no support for legacy browsers.
 
 
-## Methods
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Method</th>
-    <th>Npm module</th>
-  </tr>
-  <tr>
-    <td>String</td>
-    <td>toLowerCase</td>
-    <td>
-      <a href="https://www.npmjs.com/package/@micro-ux/micro-dash.tolowercase" target="_blank">@micro-ux/micro-dash.tolowercase</a>
-    </td>
-  </tr>
-  <tr>
-    <td>String</td>
-    <td>toUpperCase</td>
-    <td>
-      <a href="https://www.npmjs.com/package/@micro-ux/micro-dash.touppercase" target="_blank">@micro-ux/micro-dash.touppercase</a>
-    </td>
-  </tr>
-</table>
+## Web optimized modules for inidividual methods
+Each of the methods below are exported as an individual npm module (optimized for web). However, if you are planning to use this library in NodeJS environment you should be using the main @micro-ui/micro-dash library (optimized for node) instead. See section below for more details.
+
+| Category | Method | Installation | Npm Module
+| --- | --- | --- | --- |
+| String | toLowerCase | ```yarn add @micro-ux/micro-dash.tolowercase``` | [![npm version](https://img.shields.io/npm/v/@micro-ux/micro-dash.tolowercase.svg?style=flat)](https://www.npmjs.com/package/@micro-ux/micro-dash.tolowercase) |
+| String | toUpperCase | ```yarn add @micro-ux/micro-dash.touppercase``` | [![npm version](https://img.shields.io/npm/v/@micro-ux/micro-dash.touppercase.svg?style=flat)](https://www.npmjs.com/package/@micro-ux/micro-dash.touppercase) |
+
+### Example usage
+```
+import toLowerCase from '@micro-ux/micro-dash.tolowercase';
+
+toLowerCase('Foo Bar');
+```
+
+## Node optimized module - complete library
+If you are planning to use this library in NodeJS env you can use the main @micro-ui/micro-dash library (optimized for node).
+
+### Installation
+`yarn add @micro-ux/micro-dash`
+
+### Example usage
+```
+const { toLowerCase } = require('@micro-ux/micro-dash')
+
+toLowerCase('Foo Bar');
+```
 
 ## Comparision with Lodash
 <table>
