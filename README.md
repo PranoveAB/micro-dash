@@ -65,12 +65,6 @@ It is essentially a re-write of [lodash](https://github.com/lodash/lodash) (many
   </tr>
 </table>
 
-## Bundle Size Comparision
-https://bundlephobia.com/scan-results?packages=lodash.tolower,@micro-ux/micro-dash.tolowercase&sortMode=alphabetic
-
-## Performance Comparision
-See performance benchmarking tests & results in 
-
 ## Requirements
 
 - Node version >= 10.13.0
