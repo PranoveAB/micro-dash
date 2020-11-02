@@ -11,29 +11,40 @@ It is essentially a re-write of [lodash](https://github.com/lodash/lodash) (many
   <tr>
     <th>Category</th>
     <th>Method</th>
+    <th>Npm module</th>
     <th>Functionality</th>
-    <th>micro-dash Bundle size (min + gzip)</th>
-    <th>lodash Bundle size (min + gzip)</th>
-    <th>micro-dash performance</th>
-    <th>lodash performance</th>
+    <th>Bundle size (min + gzip)</th>
+    <th>Performance</th>
   </tr>
   <tr>
     <td>String</td>
     <td>toLowerCase</td>
+    <td>
+      <a href="https://www.npmjs.com/package/@micro-ux/micro-dash.tolowercase" target="_blank">@micro-ux/micro-dash.tolowercase</a>
+    </td>
     <td>Same as lodash</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <b>micro-dash</b>: <a href="https://bundlephobia.com/result?p=@micro-ux/micro-dash.tolowercase" target="_blank">426B</a><br />
+      <b>lodash</b>: <a href="https://bundlephobia.com/result?p=lodash.tolower" target="_blank">447B</a>
+    </td>
+    <td>
+      <a href="https://github.com/micro-ux/micro-dash-performance" target="_blank">Performance Benchmarking Tests</a>
+    </td>
   </tr>
   <tr>
     <td>String</td>
     <td>toUpperCase</td>
+    <td>
+      <a href="https://www.npmjs.com/package/@micro-ux/micro-dash.touppercase" target="_blank">@micro-ux/micro-dash.touppercase</a>
+    </td>
     <td>Same as lodash</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <b>micro-dash</b>: <a href="https://bundlephobia.com/result?p=@micro-ux/micro-dash.touppercase" target="_blank">426B</a><br />
+      <b>lodash</b>: <a href="https://bundlephobia.com/result?p=lodash.toupper" target="_blank">440B</a>
+    </td>
+    <td>
+      <a href="https://github.com/micro-ux/micro-dash-performance" target="_blank">Performance Benchmarking Tests</a>
+    </td>
   </tr>
 </table>
 
@@ -41,7 +52,7 @@ It is essentially a re-write of [lodash](https://github.com/lodash/lodash) (many
 https://bundlephobia.com/scan-results?packages=lodash.tolower,@micro-ux/micro-dash.tolowercase&sortMode=alphabetic
 
 ## Performance Comparision
-See performance benchmarking tests & results in https://github.com/micro-ux/micro-dash-performance
+See performance benchmarking tests & results in 
 
 ## Requirements
 
