@@ -73,6 +73,16 @@ toLowerCase('Foo Bar');
   </tr>
 </table>
 
+## Will not implement the following methods
+
+micro-dash will not implement certain methods from lodash to keep the library simple & lightweight.
+
+| Category | Lodash Method | Rationale |
+| --- | --- | --- |
+| String | _.lowerCase | TBD |
+| String | _.upperCase | TBD |
+
+
 ## Contributing
 
 ### Local setup
