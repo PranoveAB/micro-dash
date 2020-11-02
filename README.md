@@ -15,6 +15,9 @@ Each of the methods below are exported as an individual npm module (optimized fo
 | String | toLowerCase | ```yarn add @micro-ux/micro-dash.tolowercase``` | [![npm version](https://img.shields.io/npm/v/@micro-ux/micro-dash.tolowercase.svg?style=flat)](https://www.npmjs.com/package/@micro-ux/micro-dash.tolowercase) |
 | String | toUpperCase | ```yarn add @micro-ux/micro-dash.touppercase``` | [![npm version](https://img.shields.io/npm/v/@micro-ux/micro-dash.touppercase.svg?style=flat)](https://www.npmjs.com/package/@micro-ux/micro-dash.touppercase) |
 
+**Note** Implementation of other methods is still in progress
+
+
 ### Example usage
 ```
 import toLowerCase from '@micro-ux/micro-dash.tolowercase';
